@@ -1,6 +1,6 @@
 ## Link to Website:
 
-## How to Access: 
+## How to Access:
 
 
 
@@ -20,9 +20,11 @@ We want to create a word finder that is able to perform an autocomplete function
 
 ## Wireframe:
 
-![altinline](https://wireframe.cc/vjW6SP)
+![altinline](./assets/wireframe.png)
 
 ## Architecture:
+
+![altinline](./assets/architecture.JPG)
 
 ## Code Guidelines:
 * CamelCase for variable names
