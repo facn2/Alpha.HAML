@@ -2,9 +2,12 @@ const handlers = require('./handlers');
 const router = (request, response) => {
   const url = request.url;
   if (url === '/') {
-    handlers(response);
-    console.log('Heather got the thing right');
-  } else {
+    handlers.handleHome(response);
+    console.log('Heather got the thing right');}
+  else if(url.indexOf('/auto')!== -1){
+    handlers.handleAuto(request, response);
+  }
+  else {
     response.writeHead(404, "Content-Type:text/html");
     response.end("<h1>Heather fucked up</h1>");
   }

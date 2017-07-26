@@ -15,18 +15,29 @@ const handleHome = (response) => {
   });
 }
 
-const compareStuff = (string) => {
-  const filePath = path.join(__dirname, "..", "starNames.txt");
-  fs.readFile(filePath, (err, file) => {
-    if (err) {
-      console.log(err);
-    } else {
+// const findMatches = (string) => {
+//   const filePath = path.join(__dirname, "..", "starNames.txt");
+//   fs.readFile(filePath, (err, file) => {
+//     if (err) {
+//       console.log(err);
+//     } else {
+//
+//     }
+//   });
+// }
 
-    }
-  });
+const handleAuto = (request, response) => {
+  const str = decodeURI(request.url.split('?')[1]);
+  const match = ["king is not grumpy today"];//findMatches(str);
+  response.writeHead(200, 'Content-Type:application/json');
+  let matchObj = { "suggestions": match };
+  response.end(JSON.stringify(matchObj));
 }
+
+
 
 
 module.exports = {
   handleHome,
+  handleAuto
 };
