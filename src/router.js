@@ -10,6 +10,11 @@ const router = (request, response) => {
   else if(url.indexOf('/index.js') !== -1){
     handlers.handleIndex(request, response);
   }
+
+  else if(url.indexOf('/main.css') !== -1) {
+    handlers.handleCSS(request, response);
+  }
+
   else {
     response.writeHead(404, "Content-Type:text/html");
     response.end("<h1>Heather fucked up</h1>");

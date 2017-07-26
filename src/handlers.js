@@ -40,7 +40,6 @@ const findMatches = (str, callback) => {
     });
 }
 
-
 const handleAuto = (request, response) => {
   const str = decodeURI(request.url.split('?')[1]);
   findMatches(str, (arr) => {
@@ -67,11 +66,26 @@ const handleIndex = (request, response) => {
   });
 }
 
+const handleCSS = (request, response) => {
+  const filePath = path.join(__dirname, "..", 'public', 'main.css');
+  fs.readFile(filePath, (err, file) => {
+    if (err) {
+      console.log(err);
+      response.writeHead(500, 'Content-Type: text/html');
+      response.end('<h1>Can\'t find the bloody CSS</h1>')
+    } else {
+      response.writeHead(200, 'Content-Type:text/css');
+      response.end(file);
+    }
+  });
+}
+
 
 
 
 module.exports = {
   handleHome,
   handleAuto,
-  handleIndex
+  handleIndex,
+  handleCSS
 };
