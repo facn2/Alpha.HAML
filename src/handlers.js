@@ -28,10 +28,9 @@ const findMatches = (str, callback) => {
             result.push(star); //push the star name into the auto result
           }
         });
-
         if (result.length <= 10) {
           file.toLowerCase().split(",").forEach((star) => {
-            if ((star.indexOf(str) !== -1) && (result.length <= 10)) {
+            if ((star.indexOf(str) !== -1) && (result.length <= 10) && (result.indexOf(star) === -1)) {
               result.push(star);
             }
           })
