@@ -1,4 +1,5 @@
 const handlers = require('./handlers');
+
 const router = (request, response) => {
   const url = request.url;
   if (url === '/') {
@@ -13,6 +14,10 @@ const router = (request, response) => {
 
   else if(url.indexOf('/main.css') !== -1) {
     handlers.handleCSS(request, response);
+  }
+
+  else if(url.indexOf('/favicon.ico') !== -1) {
+    handlers.handleFavicon(request,response);
   }
 
   else {
