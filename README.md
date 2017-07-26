@@ -1,7 +1,6 @@
 ## Link to Website:
-
+To check out the app, please click [here](https://facn2.github.io/Alpha.HAML/.)
 ## How to Access:
-
 
 
 We want to create a word finder that is able to perform an autocomplete function.
