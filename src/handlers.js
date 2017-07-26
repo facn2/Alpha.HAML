@@ -76,6 +76,20 @@ const handleCSS = (request, response) => {
   });
 }
 
+const handleFavicon = (request, response) => {
+  const filePath = path.join(__dirname, "..", 'assets', 'favicon.ico');
+  fs.readFile(filePath, (err, file) => {
+    if (err) {
+      console.log(err);
+      response.writeHead(500, 'Content-Type: text/html');
+      response.end('<h1>Can\'t find the bloody favicon</h1>')
+    } else {
+      response.writeHead(200, 'Content-Type: image/x-icon');
+      response.end(file);
+    }
+  });
+}
+
 
 
 
@@ -83,5 +97,6 @@ module.exports = {
   handleHome,
   handleAuto,
   handleIndex,
-  handleCSS
+  handleCSS,
+  handleFavicon
 };
