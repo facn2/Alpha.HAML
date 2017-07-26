@@ -1,7 +1,7 @@
 var starInput = document.getElementById('input-field'); // get id input-field from html
 starInput.addEventListener('input', function(e) { //event listener for any change in input of starInput
 
-  var inputString = e.target.value;
+  var inputString = e.target.value.toLowerCase();
   console.log(inputString);
   var url = `/auto?${inputString}`;
   console.log(url);
