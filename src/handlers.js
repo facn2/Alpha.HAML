@@ -28,7 +28,7 @@ const findMatches = (str) => {
         }
       });
       console.log(result);
-      // return result;
+      return result;
     }
   });
 }
