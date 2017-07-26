@@ -15,22 +15,31 @@ const handleHome = (response) => {
   });
 }
 
-// const findMatches = (string) => {
-//   const filePath = path.join(__dirname, "..", "starNames.txt");
-//   fs.readFile(filePath, (err, file) => {
-//     if (err) {
-//       console.log(err);
-//     } else {
-//
-//     }
-//   });
-// }
+const findMatches = (str) => {
+  const filePath = path.join(__dirname, "..", "nameOfStar.txt");
+  fs.readFile(filePath, 'utf8', (err, file) => {
+    if (err) {
+      console.log(err);
+    } else {
+      var result = [];
+      file.split(",").forEach((star) => {
+        if ((star.indexOf(str) !== -1) && (result.length <= 10)) {
+          result.push(star);
+        }
+      });
+      console.log(result);
+      // return result;
+    }
+  });
+}
 
 const handleAuto = (request, response) => {
   const str = decodeURI(request.url.split('?')[1]);
-  const match = ["king is not grumpy today"];//findMatches(str);
+  const match = findMatches(str);
   response.writeHead(200, 'Content-Type:application/json');
-  let matchObj = { "suggestions": match };
+  let matchObj = {
+    "suggestions": match
+  };
   response.end(JSON.stringify(matchObj));
 }
 
