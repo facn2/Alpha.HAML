@@ -1,24 +1,24 @@
 var starInput = document.getElementById('input-field'); // get id input-field from html
 starInput.addEventListener('input', function(e) { //event listener for any change in input of starInput
+  function removeChildren(node) { // define remove children function
+    while (node.firstChild) {  // while there is a child of the node do this
+      console.log("node",node.firstChild);
+      node.removeChild(node.firstChild); // remove the first child of the node while firstchild exists
+    }
+  }
 
   var inputString = e.target.value.toLowerCase();
-  console.log(inputString);
+  var starList = document.getElementById('starUl'); //create ul
+
   var url = `/auto?${inputString}`;
-  console.log(url);
   var xhr = new XMLHttpRequest(); //create new xhr request
   xhr.open('GET', url); //open GET request
   xhr.send(); // send request
 
   xhr.addEventListener('load', function(loadEvent) { // looking for load of data from server
     var listContainer = document.getElementById('starSuggestions'); //get list container
-    var starList = document.getElementById('starUl'); //create ul
-    function removeChildren(node) { // define remove children function
-      while (node.firstChild) {  // while there is a child of the node do this
-        node.removeChild(node.firstChild); // remove the first child of the node while firstchild exists
-      }
-    }
     removeChildren(starList);
-    console.log(loadEvent.target);
+  //  console.log(loadEvent.target);
     var starObj = JSON.parse(loadEvent.target.responseText); //get data
     if (starObj.suggestions) {
       starObj.suggestions.forEach((star) => { // for earch suggestion do this
@@ -28,6 +28,9 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
         starList.appendChild(starOption); //append li to ul
       });
       listContainer.appendChild(starList); // append ul to list container
+    }
+    if(inputString.length === 0) {
+      removeChildren(starList);
     }
   });
 });
