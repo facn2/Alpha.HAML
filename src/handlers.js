@@ -23,7 +23,7 @@ const findMatches = (str, callback) => {
       console.log(err);
     } else {
 
-      file.split(",").forEach((star) => {
+      file.toLowerCase().split(",").forEach((star) => {
         if ((star.indexOf(str) !== -1) && (result.length <= 10)) {
           result.push(star);
         }
