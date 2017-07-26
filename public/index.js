@@ -17,7 +17,6 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
   xhr.addEventListener('load', function(loadEvent) { // looking for load of data from server
     var listContainer = document.getElementById('starSuggestions'); //get list container
     removeChildren(starList);
-    //  console.log(loadEvent.target);
     var starObj = JSON.parse(loadEvent.target.responseText); //get data
     if (starObj.suggestions) {
       starObj.suggestions.forEach((star) => { // for earch suggestion do this
