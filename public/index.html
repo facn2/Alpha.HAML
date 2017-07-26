@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <title>Alpha.HAML Star Autocomplete</title>
-  <link rel="stylesheet" href="/main.css">
+  <link rel="stylesheet" href="./main.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -17,7 +17,8 @@
     <div class>
       <form class="starForm">
           <input id="input-field" type="text" name="word" value="" placeholder="Search for your star" class="text-input" autocomplete="off" required>
-        <div class="chosen-words"></div>
+        <div id="starSuggestions" class="chosen-words">
+        </div>
         <!-- <button> stretch goal-->
       </form>
     </div>
