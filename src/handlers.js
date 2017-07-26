@@ -10,7 +10,7 @@ const handleHome = (response) => {
       response.end("<h1>Heather fucked up</h1>");
     } else {
       response.writeHead(200, "Content-Type:text/html");
-      response.end(file + "Leo sucess!");
+      response.end(file + "Leo success!");
     }
   });
 }
@@ -34,10 +34,25 @@ const handleAuto = (request, response) => {
   response.end(JSON.stringify(matchObj));
 }
 
+const handleIndex = (request, response) => {
+  const filePath = path.join(__dirname, "..", "public", "index.js");
+  fs.readFile(filePath, (err, file) => {
+    if (err) {
+      console.log(err);
+      response.writeHead(500, "Content-Type:text/html");
+      response.end("<h1>King fucked up</h1>");
+    } else {
+      response.writeHead(200, "Content-Type:application/javascript");
+      response.end(file);
+    }
+  });
+}
+
 
 
 
 module.exports = {
   handleHome,
-  handleAuto
+  handleAuto,
+  handleIndex
 };
