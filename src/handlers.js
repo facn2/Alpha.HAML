@@ -28,9 +28,10 @@ const findMatches = (str, callback) => {
           result.push(star);
         }
       });
+      // console.log(result);
+      // // return result
       callback(result);
       //console.log(result);
-
     }
   });
 }
