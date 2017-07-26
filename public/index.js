@@ -7,7 +7,7 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
     }
   }
 
-  var inputString = e.target.value.toLowerCase();
+  var inputString = e.target.value.toLowerCase().trim();
   var starList = document.getElementById('starUl'); //create ul
 
   var url = `/auto?${inputString}`;
