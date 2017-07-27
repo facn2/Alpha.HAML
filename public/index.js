@@ -4,7 +4,7 @@ function render(loadEvent, inputString) {
   removeChildren(starList);
   var starObj = JSON.parse(loadEvent.target.responseText); //get data
   if (starObj.suggestions) {
-    starObj.suggestions.forEach((star) => { // for earch suggestion do this
+    starObj.suggestions.forEach(function(star) { // for earch suggestion do this
       var starOption = document.createElement('li'); //create li
       starOption.setAttribute('class', "star-list-element");
       starOption.innerHTML = star; // li equal to star info
@@ -28,7 +28,7 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
 
   var inputString = e.target.value.toLowerCase().trim();
 
-  var url = `/auto?${inputString}`;
+  var url = '/auto?' + inputString;
   var xhr = new XMLHttpRequest(); //create new xhr request
   xhr.open('GET', url); //open GET request
   xhr.send(); // send request
