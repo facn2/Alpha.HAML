@@ -6,24 +6,43 @@
 body {
   width: 100%;
   height: 100vh;
-  border: 2px solid blue;
   background-image: url("./assets/background-Earth");
 }
 
-header {
+.header {
   background-color: gray;
   text-align: center;
   padding: 2.5em;
   font-size: 20pt;
 }
 
-section {
-  /*display: flex;
-  align-content: center;*/
-  /*width: 50%;
-  height: 50%;
-  margin: 6rem auto;*/
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
 }
+
+.text-input {
+  text-align: center;
+  width 80%;
+  border-radius: 1.5em;
+}
+
+.chosen-stars {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.star-ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 
 @media (min-width:700px) {
   * {
@@ -31,75 +50,10 @@ section {
     padding: 0;
     }
 
-    body {
-      width: 100%;
-      height: 100vh;
-      border: 2px solid blue;
-      background-image: url("./assets/background-Earth");
-    }
+  body {
+    width: 100%;
+    height: 100vh;
+    background-image: url("./assets/background-Earth");
+  }
 
-    header {
-      background-color: gray;
-      text-align: center;
-      padding: 3em;
-      font-size: 30pt;
-
-    }
-
-    section {
-      display: flex;
-      align-content: center;
-      /*width: 50%;
-      height: 50%;*/
-      margin: 6rem auto;
-    }
-
-    input[type='text'] {
-      font-size: 15pt;
-    }
-
-    .text-input {
-      height: 8em;
-      width: 50em;
-    }
-
-    .starUl {
-    list-style-type: none;
-
-    }
-
-    .main-container {
-      width: 100%;
-      height: 100%;
-    }
-
-    form {
-      width: 80%;
-      height: 80%;
-    }
-
-    input {
-      display: block;
-      text-align: center;
-      margin: auto;
-      border: 2px solid black;
-    }
-
-    .chosen-words {
-      /*height: 70%;*/
-      display: flex;
-      align-items: center;
-    }
-
-    .starForm {
-      display: flex;
-      flex-direction: column;
-    }
-
-    ul {
-      /*display: flex;
-      flex-direction: column;
-      align-self: center;*/
-      border: powderblue 2px solid;
-    }
 }
