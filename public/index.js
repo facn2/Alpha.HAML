@@ -9,7 +9,7 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
   var inputString = e.target.value.toLowerCase().trim();
   var starList = document.getElementById('starUl'); //create ul
 
-  var url = `/auto?${inputString}`;
+  var url = '/auto?' + inputString;
   var xhr = new XMLHttpRequest(); //create new xhr request
   xhr.open('GET', url); //open GET request
   xhr.send(); // send request
