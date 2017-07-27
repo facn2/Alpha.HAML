@@ -19,11 +19,11 @@ We want to create a word finder that is able to perform an autocomplete function
 
 ## Wireframe:
 
-![altinline](./assets/wireframe.png)
+![altinline](https://user-images.githubusercontent.com/25408167/28664138-fb9d0a20-72c7-11e7-9fb2-8c81838fe83f.png)
 
 ## Architecture:
 
-![altinline](./assets/architecture.JPG)
+![altinline](https://user-images.githubusercontent.com/25408167/28664133-f7bb4c0a-72c7-11e7-9c11-7759ecc6b1a4.JPG)
 
 ## Code Guidelines:
 * CamelCase for variable names
