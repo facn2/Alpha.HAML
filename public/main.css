@@ -4,96 +4,96 @@
   font-family: sans-serif;
 }
 
-  body {
-    width: 100%;
-    height: 100vh;
-    background-image: url("./assets/background.jpg");
-    background-repeat: no-repeat;
-  }
+body {
+  height: 100vh;
+  background-image: url("./assets/background-Earth.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-  header {
-    text-align: center;
-    padding: 0.5em;
-    font-size: 30pt;
-    color: white;
+header {
+  text-align: center;
+  padding: 0.5em;
+  font-size: 30pt;
+  color: white;
+}
 
-  }
+section {
+  display: flex;
+  align-content: center;
+  margin: 6rem auto;
+}
 
-  section {
-    display: flex;
-    align-content: center;
-    margin: 6rem auto;
-  }
+input[type='text'] {
+  font-size: 12pt;
+  width: 50vw;
+  padding: 0.5em 1em;
+  outline: none;
+}
 
-  input[type='text'] {
-    font-size: 12pt;
-    width: 50vw;
-    padding: 0.5em 1em;
-    outline: none;
+.text-input {
+  height: 8em;
+  width: 50em;
+}
 
-  }
-
-  .text-input {
-    height: 8em;
-    width: 50em;
-  }
-
-  .starUl {
+.starUl {
   list-style-type: none;
   display: flex;
   justify-content: center;
-  }
+}
 
-  .main-container {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
+.main-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 
-  form {
-    width: 80%;
-    height: 80%;
-  }
+form {
+  width: 80%;
+  height: 80%;
+}
 
-  input {
-    display: flex;
-    align-content: center;
-    text-align: center;
-    margin: 0 auto;
-    padding: 0 20% 0 20%;
-  }
+input {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0 20% 0 20%;
+}
 
-  .chosen-words {
-    display: flex;
-    align-items: center;
-  }
+.chosen-words {
+  display: flex;
+  align-items: center;
+}
 
-  .starForm {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 20% 0 20%;
-  }
+.starForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 20% 0 20%;
+}
 
-  ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 0 25% 0 25%;
-    background-color: white;
-    opacity: 0.5;
+ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0 25% 0 25%;
+  background-color: white;
+  opacity: 0.5;
 }
 
 @media (max-width: 400px) {
   * {
     margin: 0;
     padding: 0;
-
-    }
-
-/*  PENDING CHANGE TO RESPONSIVENESS
+  }
+  /*  PENDING CHANGE TO RESPONSIVENESS
 
     body {
       width: 100%;
