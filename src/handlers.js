@@ -39,11 +39,10 @@ const findMatches = (str, callback) => {
      }
    });
   }
-    
 
 const handleAuto = (request, response) => {
   const str = decodeURI(request.url.split('?')[1]);
-  findMatches(str, (arr) => {
+  findMatches(str, (arr) => { // once reading file and getting the result, execute callback function
     response.writeHead(200, 'Content-Type:application/json');
     let matchObj = {
       "suggestions": arr

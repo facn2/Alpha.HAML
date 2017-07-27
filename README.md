@@ -1,5 +1,5 @@
 ## Link to Website:
-To check out the app, please click [here](https://facn2.github.io/Alpha.HAML/.)
+To check out the app, please click [here](https://alphahaml.herokuapp.com/)
 ## How to Access:
 
 
