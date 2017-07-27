@@ -79,29 +79,15 @@ const handleCSS = (request, response) => {
   });
 }
 
-// const handleFavicon = (request, response) => {
-//   const filePath = path.join(__dirname, "..", 'assets', 'favicon.ico');
-//   fs.readFile(filePath, (err, file) => {
-//     if (err) {
-//       response.writeHead(500, 'Content-Type: text/html');
-//       response.end('<h1>Can\'t find the bloody favicon</h1>')
-//     } else {
-//       response.writeHead(200, 'Content-Type: image/x-icon');
-//       response.end(file);
-//     }
-//   });
-// }
 
 const handleImages = (response, url) => {
   const extension = url.split('.')[1];
-  // console.log(extension);
   const extensionType =  {
     ico: "image/x-icon",
     jpg: "image/jpg",
 
   }
   const filePath = path.join(__dirname, "..", url);
-  // console.log(filePath);
   fs.readFile(filePath, (err, file) => {
     if (err) {
       response.writeHead(500, 'Content-Type: text/html');
@@ -118,6 +104,5 @@ module.exports = {
   handleAuto,
   handleIndex,
   handleCSS,
-  // handleFavicon,
   handleImages
 };
