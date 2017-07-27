@@ -19,7 +19,7 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
     removeChildren(starList);
     var starObj = JSON.parse(loadEvent.target.responseText); //get data
     if (starObj.suggestions) {
-      starObj.suggestions.forEach((star) => { // for earch suggestion do this
+      starObj.suggestions.forEach((star) => { // for each suggestion, do this
         var starOption = document.createElement('li'); //create li
         starOption.setAttribute('class', "star-list-element");
         starOption.innerHTML = star; // li equal to star info

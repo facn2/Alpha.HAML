@@ -5,7 +5,6 @@ const handleHome = (response) => {
   const filePath = path.join(__dirname, "..", "public", "index.html");
   fs.readFile(filePath, (err, file) => {
     if (err) {
-
       response.writeHead(500, "Content-Type:text/html");
       response.end("<h1>We fucked up</h1>");
     } else {
@@ -21,17 +20,26 @@ const findMatches = (str, callback) => {
   fs.readFile(filePath, 'utf8', (err, file) => {
     if (err) {
       console.log(err);
-    } else {
-
-      file.toLowerCase().split(",").forEach((star) => {
-        if ((star.indexOf(str) !== -1) && (result.length <= 10)) {
-          result.push(star);
-        }
-      });
-      callback(result);
-    }
-  });
-}
+    } 
+    else {
+        file.toLowerCase().split(",").forEach((star) => { //split at the comma and loop through the string
+           if (star.startsWith(str) && result.length <= 10) {  //if string matches the first few inputs
+             result.push(star); //push the star name into the auto result
+           }
+         });
+         if (result.length <= 10) {
+           file.toLowerCase().split(",").forEach((star) => {
+             if ((star.indexOf(str) !== -1) && (result.length <= 10) && (result.indexOf(star) === -1)) {
+               result.push(star);
+             }
+           })
+          
+};
+       callback(result);
+     }
+   });
+  }
+    
 
 const handleAuto = (request, response) => {
   const str = decodeURI(request.url.split('?')[1]);
@@ -71,26 +79,45 @@ const handleCSS = (request, response) => {
   });
 }
 
-const handleFavicon = (request, response) => {
-  const filePath = path.join(__dirname, "..", 'assets', 'favicon.ico');
+// const handleFavicon = (request, response) => {
+//   const filePath = path.join(__dirname, "..", 'assets', 'favicon.ico');
+//   fs.readFile(filePath, (err, file) => {
+//     if (err) {
+//       response.writeHead(500, 'Content-Type: text/html');
+//       response.end('<h1>Can\'t find the bloody favicon</h1>')
+//     } else {
+//       response.writeHead(200, 'Content-Type: image/x-icon');
+//       response.end(file);
+//     }
+//   });
+// }
+
+const handleImages = (response, url) => {
+  const extension = url.split('.')[1];
+  // console.log(extension);
+  const extensionType =  {
+    ico: "image/x-icon",
+    jpg: "image/jpg",
+
+  }
+  const filePath = path.join(__dirname, "..", url);
+  // console.log(filePath);
   fs.readFile(filePath, (err, file) => {
     if (err) {
       response.writeHead(500, 'Content-Type: text/html');
-      response.end('<h1>Can\'t find the bloody favicon</h1>')
+      response.end('<h1>Can\'t find the bloody images</h1>')
     } else {
-      response.writeHead(200, 'Content-Type: image/x-icon');
+      response.writeHead(200, 'Content-Type: ${extensionType[extension]}');
       response.end(file);
     }
   });
 }
-
-
-
 
 module.exports = {
   handleHome,
   handleAuto,
   handleIndex,
   handleCSS,
-  handleFavicon
+  // handleFavicon,
+  handleImages
 };
