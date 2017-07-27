@@ -35,5 +35,6 @@ starInput.addEventListener('input', function(e) { //event listener for any chang
 
   xhr.addEventListener('load', function(loadEvent) {
     render(loadEvent, inputString);
+
   });
 });
