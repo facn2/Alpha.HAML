@@ -1,4 +1,4 @@
-var starInput = document.getElementById('input-field'); // get id input-field from html
+var starInput = document.getElementById('star-name'); // get id star-name from html
 starInput.addEventListener('input', function(e) { //event listener for any change in input of starInput
   function removeChildren(node) { // define remove children function
     while (node.firstChild) { // while there is a child of the node do this
